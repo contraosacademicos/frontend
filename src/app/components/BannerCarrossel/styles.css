@@ -1,0 +1,28 @@
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+
+.banner-carrossel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.banner-image {
+    max-width: 50%;
+    height: auto;
+}
+
+/* Customização dos dots */
+.swiper-pagination-bullet {
+    background-color: #DBA232;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #F8F9FA;
+}

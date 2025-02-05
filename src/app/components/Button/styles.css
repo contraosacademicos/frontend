@@ -1,0 +1,19 @@
+.botao-primario {
+    border: 1px solid #DBA232;
+    background-color: transparent;
+    color: #F8F9FA;
+    border-radius: 6px; /* Ajuste o border-radius conforme necessário */
+    text-transform: capitalize;
+}
+
+.botao-secundario {
+    background-color: #2C2C2D;
+    color: #F8F9FA;
+    border-radius: 6px; /* Ajuste o border-radius conforme necessário */
+    text-transform: capitalize;
+}
+
+.botao-search{
+    background-color: #FFF;
+    border-radius: 6px; /* Ajuste o border-radius conforme necessário */  
+}
