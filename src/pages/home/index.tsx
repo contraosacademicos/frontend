@@ -10,7 +10,8 @@ import {
     Divider,
     FullWidthBanner,
     TopArticle,
-    Footer
+    Footer,
+    TopColumnists
 } from '../../app/components';
 
 const opinionsData = [
@@ -18,6 +19,19 @@ const opinionsData = [
     { title: 'Jane Smith', text: 'I really enjoyed using this.' },
     { title: 'John Doe', text: 'This is an amazing product!' },
     { title: 'Jane Smith', text: 'I really enjoyed using this.' },
+];
+
+const columnistsData = [
+    { name: 'John Doe', posts: 'This is an amazing product!1', image: '/perfil.png' },
+    { name: 'Jane Smith', posts: 'I really enjoyed using thi2s.', image: '/perfil.png' },
+    { name: 'John Doe', posts: 'This is an amazing product!3', image: '/perfil.png' },
+    { name: 'Jane Smith', posts: 'I really enjoyed using thi4s.', image: '/perfil.png' },
+    { name: 'John Doe', posts: 'This is an amazing product!5', image: '/perfil.png' },
+    { name: 'Jane Smith', posts: 'I really enjoyed using thi6s.', image: '/perfil.png' },
+    { name: 'John Doe', posts: 'This is an amazing product!7', image: '/perfil.png' },
+    { name: 'Jane Smith', posts: 'I really enjoyed using this8.', image: '/perfil.png' },
+    { name: 'John Doe', posts: 'esse é o 8!', image: '/perfil.png' },
+    { name: 'John Doe', posts: 'This is an amazing product!', image: '/perfil.png' },
 ];
 
 interface HomeProps {
@@ -30,7 +44,6 @@ export default function Home({ data }: HomeProps) {
             <Header />
             <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-full">
                 <Divider text="Destaques" />
-
                 <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr_1fr] gap-8 w-full">
                     <div className="col-span-1 sm:col-span-1 flex">
                         <ImageCard imageUrl="/destaque.svg" title="Next.js" subtitle="The React Framework for Production" />
@@ -82,6 +95,25 @@ export default function Home({ data }: HomeProps) {
                     <div className="col-span-2 row-span-2 flex">
                         <TopArticle subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel cursus mauris. Sed finibus venenatis metus, quis venenatis orci. Nunc placerat, libero eget fermentum efficitur, tortor massa sodales ante, vel feugiat nunc ipsum in orci. Phasellus dictum eleifend tellus ac egestas. Cras interdum velit nec placerat gravida. Aenean libero mauris, aliquam non nunc id, porttitor vulputate libero. Nulla facilisi. Nullam nisi felis, viverra ut libero sit amet, placerat mollis ante. Nunc sit amet ipsum elementum, suscipit odio eu, ultricies odio. Curabitur pharetra lobortis mi, non dignissim dui lacinia in." title="Distúrbios emocionais na infância e alienação parental" backgroundImage="/ArticleBackgroudn.png" />
                     </div>
+                </div>
+                <div className='grid grid-cols-3 w-full gap-8'>
+                    <TopColumnists columnists={columnistsData} />
+
+                    <div className='col-span-2 grid grid-cols-2 grid-rows-4'>
+                        <Divider text="Principais colunas de $name_writer" style="row-span-1 col-span-2" />
+
+                        <div className="col-span-1 row-span-3 flex flex-col">
+                            <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
+                            <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
+                            <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
+                        </div>
+                        <div className="col-span-1 row-span-3 flex flex-col">
+                            <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
+                            <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
+                            <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
+                        </div>
+                    </div>
+
                 </div>
             </main>
             <Footer />

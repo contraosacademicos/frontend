@@ -6,3 +6,4 @@ export { default as ImageCard } from './ImageCard';
 export { default as Opinions } from './Opinions';
 export { default as TopArticle } from './TopArticle';
 export { default as Footer } from './Footer';
+export { default as TopColumnists } from './TopColumnists';
