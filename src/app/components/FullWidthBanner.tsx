@@ -3,8 +3,8 @@ import Button from './Button'; // Certifique-se de que o caminho para o componen
 
 interface FullWidthBannerProps {
   backgroundImage: string;
-  text: string;
-  buttonText: string;
+  text?: string;
+  buttonText?: string;
   
 }
 
