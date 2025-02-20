@@ -9,13 +9,13 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-  {
-    rules: {
-      "@next/next/no-html-link-for-pages": "off",
-    },
-  },
-];
+// const eslintConfig = [
+//   ...compat.extends("next/core-web-vitals", "next/typescript"),
+//   {
+//     rules: {
+//       "@next/next/no-html-link-for-pages": "off",
+//     },
+//   },
+// ];
 
-export default eslintConfig;
+// export default eslintConfig;
