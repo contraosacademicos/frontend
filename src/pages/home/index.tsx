@@ -1,6 +1,7 @@
 import React from 'react';
 import { fetchHomeData } from '../../app/api/homeApi';
 import Image from "next/image";
+import { Geist, Geist_Mono } from "next/font/google";
 import '../../app/globals.css';
 import {
     Header,
@@ -13,6 +14,8 @@ import {
     Footer,
     TopColumnists
 } from '../../app/components';
+import Head from 'next/head';
+
 
 const opinionsData = [
     { title: 'John Doe', text: 'This is an amazing product!' },
@@ -38,45 +41,74 @@ interface HomeProps {
     data: any;
 }
 
+const geistSans = Geist({
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
+});
+
+
 export default function Home({ data }: HomeProps) {
     return (
-        <div className="grid grid-rows-[40px_1fr] items-center justify-items-center min-h-screen p-8 md:px-52 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] max-w-full overflow-hidden">
-            <Header />
-            <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-full">
-                <Divider text="Destaques" />
-                <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr_1fr] gap-8 w-full">
+        <>
+            <Head>
+                <title>COA</title>
+                <meta name="description" content="teste" />
+                <link
+                    rel="stylesheet"
+                    type="text/css"
+                    charSet="UTF-8"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+                />
+                <link
+                    rel="stylesheet"
+                    type="text/css"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+                />
+            </Head>
+
+            <div className="w-full min-h-screen md:px-48 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] max-w-full">
+                <Header />
+                <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-full">
+                    <BannerCarrossel />
+                    <Divider text="Destaques" />
+                    <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr_1fr] gap-8 w-full">
                     <div className="col-span-1 sm:col-span-1 flex">
-                        <ImageCard imageUrl="/destaque.svg" title="Next.js" subtitle="The React Framework for Production" />
-                    </div>
+                            <ImageCard imageUrl="/destaque.svg" title="Next.js" subtitle="The React Framework for Production" />
+                        </div>
                     <div className="col-span-1 sm:col-span-1 flex flex-col gap-8">
                         <div className="flex">
-                            <ImageCard imageUrl="/image2.svg" title="Next.js" subtitle="The React Framework for Production" />
-                        </div>
+                                <ImageCard imageUrl="/image2.svg" title="Next.js" subtitle="The React Framework for Production" />
+                            </div>
                         <div className="flex">
-                            <ImageCard imageUrl="/image2.svg" title="Next.js" subtitle="The React Framework for Production" />
+                                <ImageCard imageUrl="/image2.svg" title="Next.js" subtitle="The React Framework for Production" />
+                            </div>
                         </div>
-                    </div>
                     <div className="col-span-1 sm:col-span-1 flex flex-col gap-8">
-                        <Opinions opinions={opinionsData} />
-                    </div>
+                            <Opinions opinions={opinionsData} />
+                        </div>
                     <div className="col-span-1 sm:col-span-3 flex">
-                        <FullWidthBanner
-                            backgroundImage="/bannerDivider.svg"
-                            text="Welcome to Our Website"
-                            buttonText="Clique aqui e crie sua conta"
-                        />
+                            <FullWidthBanner
+                                backgroundImage="/bannerDivider.svg"
+                                text="Welcome to Our Website"
+                                buttonText="Clique aqui e crie sua conta"
+                            />
+                        </div>
                     </div>
-                </div>
-                <Divider text="Artigos" />
-                <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr_1fr] grid-rows-[1fr_1fr_1fr_1fr] gap-8 w-full">
+                    <Divider text="Artigos" />
+                    <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr_1fr] grid-rows-[1fr_1fr_1fr_1fr] gap-8 w-full">
                     <div className="col-span-1 row-span-1 flex">
-                        <ImageCard imageUrl="/image2.svg" title="Article 1" subtitle="Subtitle for Article 1" />
-                    </div>
+                            <ImageCard imageUrl="/image2.svg" title="Article 1" subtitle="Subtitle for Article 1" />
+                        </div>
                     <div className="col-span-1 row-span-1 flex">
-                        <ImageCard imageUrl="/image2.svg" title="Article 2" subtitle="Subtitle for Article 2" />
-                    </div>
+                            <ImageCard imageUrl="/image2.svg" title="Article 2" subtitle="Subtitle for Article 2" />
+                        </div>
                     <div className="col-span-1 row-span-1 flex">
-                        <ImageCard imageUrl="/image2.svg" title="Article 3" subtitle="Subtitle for Article 3" />
+                            <ImageCard imageUrl="/image2.svg" title="Article 3" subtitle="Subtitle for Article 3" />
                     </div>
                     <div className="col-span-1 row-span-1 flex">
                         <ImageCard imageUrl="/image2.svg" title="Article 4" subtitle="Subtitle for Article 4" />
@@ -114,10 +146,11 @@ export default function Home({ data }: HomeProps) {
                         </div>
                     </div>
 
-                </div>
-            </main>
+                    </div>
+                </main>
             <Footer />
-        </div>
+            </div>
+        </>
     );
 }
 
