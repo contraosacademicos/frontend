@@ -9,7 +9,7 @@ export default function Header() {
     const pathname = usePathname();
 
     return (
-        <header className="flex w-full h-20 items-center justify-between gap-8 px-6 sm:px-8">
+        <header className="flex w-full h-20 items-center justify-between gap-8 px-6 pb-6 sm:px-8">
             <div className=''>
                 <Image
                     aria-hidden
