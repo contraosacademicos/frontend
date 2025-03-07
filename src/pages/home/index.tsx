@@ -12,9 +12,11 @@ import {
     FullWidthBanner,
     TopArticle,
     Footer,
-    TopColumnists
+    TopColumnists,
+    Button
 } from '../../app/components';
 import Head from 'next/head';
+import Plans from '@/app/components/Planos';
 
 
 const opinionsData = [
@@ -77,21 +79,21 @@ export default function Home({ data }: HomeProps) {
                     <BannerCarrossel />
                     <Divider text="Destaques" />
                     <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr_1fr] gap-8 w-full">
-                    <div className="col-span-1 sm:col-span-1 flex">
+                        <div className="col-span-1 sm:col-span-1 flex">
                             <ImageCard imageUrl="/destaque.svg" title="Next.js" subtitle="The React Framework for Production" />
                         </div>
-                    <div className="col-span-1 sm:col-span-1 flex flex-col gap-8">
-                        <div className="flex">
+                        <div className="col-span-1 sm:col-span-1 flex flex-col gap-8">
+                            <div className="flex">
                                 <ImageCard imageUrl="/image2.svg" title="Next.js" subtitle="The React Framework for Production" />
                             </div>
-                        <div className="flex">
+                            <div className="flex">
                                 <ImageCard imageUrl="/image2.svg" title="Next.js" subtitle="The React Framework for Production" />
                             </div>
                         </div>
-                    <div className="col-span-1 sm:col-span-1 flex flex-col gap-8">
+                        <div className="col-span-1 sm:col-span-1 flex flex-col gap-8">
                             <Opinions opinions={opinionsData} />
                         </div>
-                    <div className="col-span-1 sm:col-span-3 flex">
+                        <div className="col-span-1 sm:col-span-3 flex">
                             <FullWidthBanner
                                 backgroundImage="/bannerDivider.svg"
                                 text="Welcome to Our Website"
@@ -101,54 +103,78 @@ export default function Home({ data }: HomeProps) {
                     </div>
                     <Divider text="Artigos" />
                     <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr_1fr] grid-rows-[1fr_1fr_1fr_1fr] gap-8 w-full">
-                    <div className="col-span-1 row-span-1 flex">
+                        <div className="col-span-1 row-span-1 flex">
                             <ImageCard imageUrl="/image2.svg" title="Article 1" subtitle="Subtitle for Article 1" />
                         </div>
-                    <div className="col-span-1 row-span-1 flex">
+                        <div className="col-span-1 row-span-1 flex">
                             <ImageCard imageUrl="/image2.svg" title="Article 2" subtitle="Subtitle for Article 2" />
                         </div>
-                    <div className="col-span-1 row-span-1 flex">
+                        <div className="col-span-1 row-span-1 flex">
                             <ImageCard imageUrl="/image2.svg" title="Article 3" subtitle="Subtitle for Article 3" />
-                    </div>
-                    <div className="col-span-1 row-span-1 flex">
-                        <ImageCard imageUrl="/image2.svg" title="Article 4" subtitle="Subtitle for Article 4" />
-                    </div>
-                    <div className="col-span-1 row-span-1 flex">
-                        <ImageCard imageUrl="/image2.svg" title="Article 5" subtitle="Subtitle for Article 5" />
-                    </div>
-                    <div className="col-span-1 row-span-1 flex">
-                        <ImageCard imageUrl="/image2.svg" title="Article 6" subtitle="Subtitle for Article 6" />
-                    </div>
-                    <div className="col-span-1 row-span-2 flex flex-col">
-                        <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
-
-                        <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
-                    </div>
-                    <div className="col-span-2 row-span-2 flex">
-                        <TopArticle subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel cursus mauris. Sed finibus venenatis metus, quis venenatis orci. Nunc placerat, libero eget fermentum efficitur, tortor massa sodales ante, vel feugiat nunc ipsum in orci. Phasellus dictum eleifend tellus ac egestas. Cras interdum velit nec placerat gravida. Aenean libero mauris, aliquam non nunc id, porttitor vulputate libero. Nulla facilisi. Nullam nisi felis, viverra ut libero sit amet, placerat mollis ante. Nunc sit amet ipsum elementum, suscipit odio eu, ultricies odio. Curabitur pharetra lobortis mi, non dignissim dui lacinia in." title="Distúrbios emocionais na infância e alienação parental" backgroundImage="/ArticleBackgroudn.png" />
-                    </div>
-                </div>
-                <div className='grid grid-cols-3 w-full gap-8'>
-                    <TopColumnists columnists={columnistsData} />
-
-                    <div className='col-span-2 grid grid-cols-2 grid-rows-4'>
-                        <Divider text="Principais colunas de $name_writer" style="row-span-1 col-span-2" />
-
-                        <div className="col-span-1 row-span-3 flex flex-col">
+                        </div>
+                        <div className="col-span-1 row-span-1 flex">
+                            <ImageCard imageUrl="/image2.svg" title="Article 4" subtitle="Subtitle for Article 4" />
+                        </div>
+                        <div className="col-span-1 row-span-1 flex">
+                            <ImageCard imageUrl="/image2.svg" title="Article 5" subtitle="Subtitle for Article 5" />
+                        </div>
+                        <div className="col-span-1 row-span-1 flex">
+                            <ImageCard imageUrl="/image2.svg" title="Article 6" subtitle="Subtitle for Article 6" />
+                        </div>
+                        <div className="col-span-1 row-span-2 flex flex-col">
                             <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
-                            <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
+
                             <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
                         </div>
-                        <div className="col-span-1 row-span-3 flex flex-col">
-                            <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
-                            <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
-                            <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
+                        <div className="col-span-2 row-span-2 flex">
+                            <TopArticle subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel cursus mauris. Sed finibus venenatis metus, quis venenatis orci. Nunc placerat, libero eget fermentum efficitur, tortor massa sodales ante, vel feugiat nunc ipsum in orci. Phasellus dictum eleifend tellus ac egestas. Cras interdum velit nec placerat gravida. Aenean libero mauris, aliquam non nunc id, porttitor vulputate libero. Nulla facilisi. Nullam nisi felis, viverra ut libero sit amet, placerat mollis ante. Nunc sit amet ipsum elementum, suscipit odio eu, ultricies odio. Curabitur pharetra lobortis mi, non dignissim dui lacinia in." title="Distúrbios emocionais na infância e alienação parental" backgroundImage="/ArticleBackgroudn.png" />
                         </div>
                     </div>
 
+                    <div
+                        className={`w-full pt-12 mb-16 pb-3 px-24 flex flex-col items-center justify-around text-center rounded-3xl bg-cover bg-center`}
+                        style={{ backgroundImage: `url(/banner-degrade.png)` }}
+                    >
+                        <Image
+                            aria-hidden
+                            src="/logo_s_fundo.svg"
+                            alt="icon"
+                            width={67}
+                            height={62}
+                        />
+                        <p className='pt-6 text-amber-500 text-xs '>Contra Acadêmicos</p>
+                        <p className="text-amber-500 text-2xl mb-4">Seu apoio é mais importante do que nunca!</p>
+                        <p className="text-white text-sm mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eros nisl, faucibus quis tortor et, congue congue neque. Fusce ut sapien tempus, scelerisque nibh eu, efficitur purus. </p>
+                        <div className='flex gap-8 flex-row justify-center'>
+                            <Button text="Assinar" className=' rounded-full bg-[rgba(44,44,45,0.5)]' />
+                            <Button text="Quero apoiar" className='border-2 rounded-full border-amber-500' />
+                        </div>
                     </div>
+
+                    <div className='grid grid-cols-3 w-full gap-8'>
+                        <TopColumnists columnists={columnistsData} />
+
+                        <div className='col-span-2 grid grid-cols-2 grid-rows-4'>
+                            <Divider text="Principais colunas de $name_writer" style="row-span-1 col-span-2" />
+
+                            <div className="col-span-1 row-span-3 flex flex-col">
+                                <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
+                                <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
+                                <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
+                            </div>
+                            <div className="col-span-1 row-span-3 flex flex-col">
+                                <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
+                                <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
+                                <ImageCard imageUrl="/image2.svg" title="Article 10" subtitle="Subtitle for Article 10" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <Plans />
+
                 </main>
-            <Footer />
+                <Footer />
             </div>
         </>
     );
