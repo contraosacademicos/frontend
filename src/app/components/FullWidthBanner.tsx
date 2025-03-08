@@ -11,7 +11,7 @@ interface FullWidthBannerProps {
 const FullWidthBanner: React.FC<FullWidthBannerProps> = ({ backgroundImage, text, buttonText,  }) => {
   return (
     <div
-      className="w-full h-32 flex flex-row items-center justify-around text-center rounded-lg bg-cover bg-center"
+      className="w-full h-32 flex flex-row items-center justify-around text-center rounded-3xl bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <p className="text-white text-2xl mb-4">{text}</p>

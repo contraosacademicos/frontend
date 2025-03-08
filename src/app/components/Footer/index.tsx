@@ -2,10 +2,26 @@ import React from 'react';
 import Image from 'next/image';
 import FullWidthBanner from '../FullWidthBanner';
 import Button from '../Button';
+import FooterCarrossel from '../footerCarrossel';
+import Divider from '../Divider';
 
 const Footer = () => {
   return (
-    <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center max-w-full">
+    <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center w-full">
+      <div
+        className="w-screen p-12 flex flex-col items-center bg-cover bg-center"
+        style={{
+          background: 'conic-gradient(from 199.23deg at 50% 20.74%, #010101 0deg, #37290F 126deg, #454545 234deg, #202020 360deg)'
+        }}
+      >
+        <div className='flex flex-col items-center'>
+          <p className='text-white text-2xl capitalize'> Expanda seu conhecimento</p>
+          <p className='text-white text-4xl font-bold capitalize'> módulos</p>
+          <Divider text="" style='' borderColor='white'/>
+        </div>
+
+        <FooterCarrossel />
+      </div>
       <div
         className="w-full mb-36 pt-14 pb-12 h-auto flex flex-row justify-around rounded-lg bg-cover bg-center"
         style={{ backgroundImage: `url(bannerFooter.png)` }}
